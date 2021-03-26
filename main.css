@@ -1,0 +1,35 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+html {
+    font-size: 16px;
+    color: #2a2a2a;
+}
+
+
+body {
+    background-color: #fafafa;
+}
+
+h1 {
+    font-family: 'Architects Daughter', cursive;
+    margin: 1rem 0 2rem;
+    font-size: 3.2rem;
+    text-align: center;
+    color: #440a67;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+textarea {
+    height: 95vh;
+    width: 95vw;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-color: #93329e;
+    margin: 0 auto;
+}
