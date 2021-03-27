@@ -1,4 +1,4 @@
-# Jot It Down
+# Write It Down
 
 An area to quickly jot something down.
 
