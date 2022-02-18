@@ -41,6 +41,7 @@ export const App: React.FC = () => {
                 <textarea
                     name="write-area"
                     placeholder="Start writing something..."
+                    autoFocus
                     onChange={({ target: { value } }) => setText(value)}
                     value={text} />
             </div>
