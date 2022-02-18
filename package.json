@@ -1,0 +1,34 @@
+{
+  "name": "write-it-down",
+  "version": "1.0.0",
+  "description": "An area to quickly jot something down.",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eowino/write-it-down.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eowino/write-it-down/issues"
+  },
+  "homepage": "https://github.com/eowino/write-it-down#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "@vitejs/plugin-react": "^1.2.0",
+    "sass": "^1.49.8",
+    "typescript": "^4.5.5",
+    "vite": "^2.8.4"
+  }
+}
