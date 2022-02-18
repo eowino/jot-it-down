@@ -1,8 +1,7 @@
 import React from 'react';
-import { HighBrightness } from '.';
 
 import { AppTheme } from '../enums';
-import { LowBrightness } from './LowBrightness';
+import { HighBrightness, LowBrightness } from './icons';
 
 export const THEME_ID = 'write_it_down_theme';
 
@@ -13,7 +12,7 @@ if (savedTheme) {
     theme = savedTheme === AppTheme.Dark ? AppTheme.Dark : AppTheme.Light;
 }
 
-export const ThemeToggle: React.FC = () => {
+export const ToggleTheme: React.FC = () => {
     const [currentTheme, setCurrentTheme] = React.useState(theme);
     const isDarkMode = currentTheme === AppTheme.Dark;
 
@@ -27,7 +26,7 @@ export const ThemeToggle: React.FC = () => {
     }
 
     return (
-        <button className='btn-theme' type='button' onClick={toggleTheme} title={`Switch to ${isDarkMode ? 'Light' : 'Dark'} mode`}>
+        <button className='btn' type='button' onClick={toggleTheme} title={`Switch to ${isDarkMode ? 'Light' : 'Dark'} mode`}>
             {isDarkMode ? <LowBrightness /> : <HighBrightness />}
         </button>
     );

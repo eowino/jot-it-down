@@ -1,3 +1,4 @@
 export * from "./App"
-export * from "./HighBrightness"
-export * from "./LowBrightness"
+export * from "./ToggleTheme"
+
+export * from "./icons"
