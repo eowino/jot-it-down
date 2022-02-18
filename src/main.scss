@@ -1,24 +1,35 @@
-@import './reset.scss';
+@import "./reset.scss";
 
-* {
-    font-family: 'Lato', sans-serif;
+:root {
+    --primary: #024b70;
+    --secondary: #f0d5bb;
+    --bg: #fafafa;
+    --color: #000;
 }
 
 html {
+    color: var(--color);
     font-size: 16px;
-    color: #2a2a2a;
+    font-family: "Lato", sans-serif;
 }
 
 body {
-    background-color: #fafafa;
+    background-color: var(--bg);
+
+    &.dark-mode {
+        --primary: #8c93a5;
+        --secondary: #1b1f32;
+        --bg: #131a2a;
+        --color: #f0d5bb;
+    }
 }
 
 h1 {
-    font-family: 'Architects Daughter', cursive;
+    font-family: "Architects Daughter", cursive;
     margin: 1rem 0 2rem;
     font-size: 3.2rem;
     text-align: center;
-    color: #440a67;
+    color: var(--primary);
 }
 
 .container {
@@ -27,10 +38,36 @@ h1 {
 }
 
 textarea {
-    height: 95vh;
+    height: 80vh;
     width: 95vw;
     font-size: 1.2rem;
     padding: 1rem;
-    border-color: #93329e;
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+    color: var(--color);
     margin: 0 auto;
+    border-radius: 6px;
+}
+
+header {
+    position: relative;
+
+    .btn-theme {
+        position: absolute;
+        right: 2rem;
+        top: 0;
+    }
+}
+
+.btn-theme {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+
+    svg {
+        fill: var(--primary);
+        height: 2rem;
+        width: 2rem;
+    }
 }
