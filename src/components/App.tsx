@@ -7,6 +7,8 @@ export const SAVE_ID = 'write_it_down_save';
 export const SAVED_CONTENT = 'write_it_down_content';
 
 export const App: React.FC = () => {
+  const selectionStartRef = React.useRef<number | null>(null);
+  const textAreaRef = React.useRef<HTMLTextAreaElement | null>(null);
   const [text, setText] = React.useState(
     localStorage.getItem(SAVED_CONTENT) ?? ''
   );
@@ -17,6 +19,14 @@ export const App: React.FC = () => {
   React.useEffect(() => {
     localStorage.setItem(SAVE_ID, shouldSave.toString());
   }, [shouldSave]);
+
+  React.useLayoutEffect(() => {
+    if (selectionStartRef.current != null && textAreaRef.current) {
+      const nextPosition = selectionStartRef.current + 2;
+      textAreaRef.current.setSelectionRange(nextPosition, nextPosition);
+      selectionStartRef.current = null;
+    }
+  }, [text]);
 
   React.useEffect(() => {
     if (shouldSave) {
@@ -37,7 +47,12 @@ export const App: React.FC = () => {
   function onKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
     if (e.key === 'Tab') {
       e.preventDefault();
-      setText((t) => t + '  ');
+      const { selectionStart } = e.target as HTMLTextAreaElement;
+      selectionStartRef.current = selectionStart;
+
+      setText((t) => {
+        return t.slice(0, selectionStart) + '  ' + t.slice(selectionStart);
+      });
     }
   }
 
@@ -58,6 +73,7 @@ export const App: React.FC = () => {
       <div className="container">
         <textarea
           name="write-area"
+          ref={textAreaRef}
           placeholder="Start writing something..."
           autoFocus
           onChange={onChange}
