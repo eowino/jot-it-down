@@ -1,77 +1,72 @@
-@import "./reset.scss";
+@import './reset.scss';
 
 :root {
-    --primary: #024b70;
-    --secondary: #f0d5bb;
-    --bg: #fafafa;
-    --color: #000;
+  --primary: #024b70;
+  --secondary: #f0d5bb;
+  --bg: #fafafa;
+  --color: #000;
 }
 
 html {
-    color: var(--color);
-    font-size: 16px;
-    font-family: "Lato", sans-serif;
+  color: var(--color);
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
 }
 
 body {
-    background-color: var(--bg);
+  background-color: var(--bg);
 
-    &.dark-mode {
-        --primary: #8c93a5;
-        --secondary: #1b1f32;
-        --bg: #131a2a;
-        --color: #f0d5bb;
-    }
+  &.dark-mode {
+    --primary: #8c93a5;
+    --secondary: #1b1f32;
+    --bg: #131a2a;
+    --color: #f0d5bb;
+  }
 }
 
 h1 {
-    font-family: "Architects Daughter", cursive;
-    margin: 1rem 0 2rem;
-    font-size: 3.2rem;
-    text-align: center;
-    color: var(--primary);
+  font-family: 'Architects Daughter', cursive;
+  margin: 1rem 0 2rem;
+  font-size: 3.2rem;
+  text-align: center;
+  color: var(--primary);
 }
 
 .container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 textarea {
-    height: 80vh;
-    width: 95vw;
-    font-size: 1.2rem;
-    padding: 1rem;
-    border-color: var(--secondary);
-    background-color: var(--secondary);
-    color: var(--color);
-    margin: 0 auto;
-    border-radius: 6px;
+  height: 80vh;
+  width: 95vw;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-color: var(--secondary);
+  background-color: var(--secondary);
+  color: var(--color);
+  margin: 0 auto;
+  border-radius: 6px;
 }
 
 header {
-    position: relative;
-
-    .btn {
-        position: absolute;
-        right: 2rem;
-        top: 0;
-    }
-
-    .btn-save {
-        right: 6rem;
-    }
+  .btn-group {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem;
+    gap: 1rem;
+  }
 }
 
 .btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
 
-    svg {
-        fill: var(--primary);
-        height: 2rem;
-        width: 2rem;
-    }
+  svg {
+    fill: var(--primary);
+    height: 2rem;
+    width: 2rem;
+  }
 }

@@ -59,16 +59,18 @@ export const App: React.FC = () => {
   return (
     <React.Fragment>
       <header>
+        <div className="btn-group">
+          <ToggleTheme />
+          <button
+            className="btn btn-save"
+            type="button"
+            onClick={toggleSaving}
+            title={`${shouldSave ? 'Disable' : 'Enable'} saving`}
+          >
+            {shouldSave ? <SaveEnabled /> : <SaveDisabled />}
+          </button>
+        </div>
         <h1>Write it down</h1>
-        <ToggleTheme />
-        <button
-          className="btn btn-save"
-          type="button"
-          onClick={toggleSaving}
-          title={`${shouldSave ? 'Disable' : 'Enable'} saving`}
-        >
-          {shouldSave ? <SaveEnabled /> : <SaveDisabled />}
-        </button>
       </header>
       <div className="container">
         <textarea
